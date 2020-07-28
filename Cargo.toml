@@ -1,0 +1,27 @@
+[package]
+name = "project-haystack-rs"
+version = "0.1.0"
+authors = ["Glenn Pierce <glenn.pierce@carnegosystems.com>"]
+edition = "2018"
+
+[[bin]]
+name = "test"
+path = "src/main.rs"
+
+[dependencies]
+parking_lot = "*"
+http = "*"
+serde = { version = "1.0.100", features = ["derive"] }
+lazy_static = "*"
+chrono = { version = "0.4" }
+warp = { version = "0.2.4", features = ["tls"] }
+pretty_env_logger = "*"
+log = { version = "0.4", features = ["std"] }
+
+[dependencies.tokio]
+features = ["fs", "stream", "sync", "time"]
+version = "0.2"
+
+[dev-dependencies.tokio]
+features = ["macros"]
+version = "0.2"
